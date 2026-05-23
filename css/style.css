@@ -1,0 +1,660 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --primary: #fbbf24;
+    --logo-color-primary: #111;
+    --secondary-background: #fef3c7;
+}
+
+body {
+    background: #f7f7f7;
+    color: #333;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+header {
+    background: var(--primary);
+    padding: 15px 60px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 60px;
+    gap: 60px;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 24px;
+    color: var(--logo-color-primary);
+    transition: color 0.3s;
+}
+
+.nav-links {
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    margin-left: 60px;
+}
+
+.nav-links a {
+    font-weight: 500;
+    transition: 0.3s;
+    color: #111;
+}
+
+.nav-links a:hover {
+    color: #f5e9d4;
+}
+
+/* تنسيق القائمة المنسدلة (Dropdown) */
+.navbar .nav-links .dropdown {
+    position: relative;
+}
+
+.navbar .nav-links .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 180px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    padding: 10px 0;
+    border-radius: 8px;
+    top: 100%;
+    left: 0;
+    list-style: none;
+    margin-top: 5px;
+}
+
+.navbar .nav-links .dropdown-content li a {
+    color: #111;
+    padding: 10px 15px;
+    display: block;
+    text-align: left;
+    font-weight: 400;
+}
+
+.navbar .nav-links .dropdown-content li a:hover {
+    background-color: #f5f5f5;
+    color: var(--primary);
+}
+
+.navbar .nav-links .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+.nav-buttons {
+    display: flex;
+    gap: 32px;
+    margin-left: auto;
+}
+
+.btn {
+    font-size: 16px;
+    font-weight: 600;
+    padding: 10px 24px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+
+.btn.login {
+    background: transparent;
+    border: 2px solid #111;
+    color: #111;
+}
+
+.btn.login:hover {
+    background: #111;
+    color: #fff;
+}
+
+
+.btn.signup {
+    background: var(--primary);
+    border: 2px solid var(--primary);
+    color: #fff;
+}
+
+.btn.signup:hover {
+    background: #333;
+    border-color: #333;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #111;
+}
+
+
+.head {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    justify-content: space-between;
+    padding: 32px 60px;
+}
+
+.head .content {
+    max-width: 50%;
+}
+
+.head h1 {
+    font-size: 40px;
+    margin-bottom: 16px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.highlight {
+    color: #c49b2b;
+}
+
+.head p {
+    font-size: 18px;
+    margin-bottom: 29px;
+    max-width: 450px;
+}
+
+.head button {
+    background: #111;
+    color: #fff;
+    padding: 13px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.3s;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.head button:hover {
+    background: #333;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.head img {
+    width: 400px;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+    padding: 32px 60px;
+    background: #fff;
+    font-weight: bold;
+}
+
+.stats div {
+    text-align: center;
+}
+
+.section1 {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    padding: 48px 60px;
+    background: #fef9c3;
+}
+
+.section1 img {
+    width: 300px;
+}
+
+.section1 h2 {
+    margin-bottom: 16px;
+}
+
+.section1 p {
+    max-width: 500px;
+}
+
+.features {
+    padding: 48px 60px;
+    text-align: center;
+    background: #fef9c3;
+}
+
+.features h2 {
+    margin-bottom: 16px;
+}
+
+.features button {
+    background: #0e0b07;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    margin-bottom: 32px;
+}
+
+.feature.card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 24px;
+    margin: 16px 0;
+}
+
+.courses {
+    background: #111;
+    color: #fff;
+    padding: 48px 60px;
+    text-align: center;
+}
+
+.course.cards {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    margin-top: 32px;
+}
+
+.course.card {
+    background: #fff;
+    color: #111;
+    border-radius: 12px;
+    padding: 16px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.course.card img {
+    width: 100px;
+    margin-bottom: 16px;
+}
+
+.course.card button {
+    background: #f59e0b;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 6px;
+    margin-top: 16px;
+    cursor: pointer;
+}
+
+/* تنسيق نظام التقييم بالنجوم */
+.rating {
+    font-size: 2em;
+    cursor: pointer;
+    margin: 15px 0;
+    display: flex;
+    justify-content: center;
+    direction: ltr;
+}
+
+.rating span {
+    color: #ccc;
+    transition: color 0.2s;
+}
+
+.rating span.rated {
+    color: gold;
+}
+
+.easy.started {
+    padding: 48px 60px;
+    text-align: center;
+}
+
+.easy.started ul {
+    margin-top: 16px;
+}
+
+.easy.started li {
+    margin: 8px 0;
+}
+
+.Ready {
+    text-align: center;
+    padding: 48px 60px;
+    background: #fef3c7;
+}
+
+.Ready button {
+    margin-top: 16px;
+    padding: 13px 24px;
+    background: #111;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+}
+
+
+.apps {
+    text-align: center;
+    padding: 48px 60px;
+}
+
+.download {
+    margin: 8px;
+    padding: 13px 24px;
+    border: none;
+    background: var(--primary);
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.footer {
+    background: #111;
+    color: #fff;
+    padding: 32px 60px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 32px;
+}
+
+.footer-section h4 {
+    margin-bottom: 16px;
+}
+
+.footer-section ul li {
+    margin: 8px 0;
+}
+
+.footer-section a {
+    color: #ccc;
+}
+
+.footer-section a:hover {
+    color: #f59e0b;
+}
+
+.terms {
+    text-align: right;
+    margin-top: 16px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    width: 300px;
+    margin: 100px auto;
+    border-radius: 8px;
+    text-align: center;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.modal-content input {
+    width: 100%;
+    margin: 8px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.submit-btn {
+    background: #f59e0b;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background: #d97706;
+}
+
+
+#themeBtn {
+    margin-left: 15px;
+    padding: 5px 10px;
+    cursor: pointer;
+    border: none;
+    background: var(--primary);
+    color: #fff;
+    border-radius: 5px;
+}
+
+/* ------------------------------------- */
+/* تنسيقات الوضع الداكن (Dark Mode) */
+/* ------------------------------------- */
+
+body.dark {
+    --logo-color-primary: #eaeaea;
+    background: #0f1114;
+    color: #eaeaea;
+}
+
+body.dark header,
+body.dark .navbar {
+    background: #1b1b1b;
+}
+
+body.dark .logo {
+    color: var(--primary) !important; 
+}
+
+body.dark .nav-links {
+    background: #1b1b1b;
+}
+
+body.dark .nav-links a {
+    color: #eaeaea;
+}
+
+body.dark .nav-links a:hover {
+    color: var(--primary);
+}
+
+body.dark .navbar .nav-links .dropdown-content {
+    background-color: #16181b;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+}
+
+body.dark .navbar .nav-links .dropdown-content li a {
+    color: #eaeaea;
+}
+
+body.dark .navbar .nav-links .dropdown-content li a:hover {
+    background-color: #26282b;
+    color: var(--primary);
+}
+
+body.dark .btn {
+    background: #333;
+    color: #f5f5f5;
+    border-color: #444;
+}
+
+body.dark .btn.login {
+    background: transparent;
+    border-color: #eaeaea;
+    color: #eaeaea;
+}
+
+body.dark .btn.login:hover {
+    background: #eaeaea;
+    color: #111;
+}
+
+body.dark .btn.signup {
+    background: var(--primary);
+    color: #111;
+}
+
+body.dark .btn.signup:hover {
+    background: #f59e0b;
+    border-color: #f59e0b;
+}
+
+body.dark .section1,
+body.dark .features,
+body.dark .Ready,
+body.dark .apps {
+    background: #161616;
+    color: #ddd;
+}
+
+body.dark .feature.card,
+body.dark .course.card,
+body.dark .card {
+    background: #16181b;
+    color: #eaeaea;
+    border: 1px solid #26282b;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+}
+
+body.dark .courses {
+    background: #0b0b0b;
+    color: #fff;
+}
+
+body.dark .footer {
+    background: #070707;
+    color: #cfcfcf;
+}
+
+body.dark .rating span {
+    color: #444;
+}
+
+body.dark .rating span.rated {
+    color: gold;
+}
+
+
+/* ------------------------------------- */
+/* تنسيقات الشاشات الصغيرة (Media Queries) */
+/* ------------------------------------- */
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        margin-left: auto;
+        cursor: pointer;
+    }
+
+    .navbar {
+        flex-wrap: wrap;
+        padding: 16px 20px;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: var(--primary);
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        width: 200px;
+        padding: 20px;
+        border-radius: 8px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+    
+    /* القائمة المنسدلة في وضع الهاتف */
+    .navbar .nav-links .dropdown-content {
+        position: static;
+        box-shadow: none;
+        padding-left: 15px;
+        background: transparent;
+    }
+
+    .nav-buttons {
+        display: none;
+    }
+
+    .head {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .head img {
+        width: 100%;
+        max-width: 300px;
+        margin-top: 20px;
+    }
+
+    .stats {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .section1 {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .section1 img {
+        width: 100%;
+        max-width: 250px;
+    }
+
+    .course.cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .course.card {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+

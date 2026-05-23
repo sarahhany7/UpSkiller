@@ -1,0 +1,17 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background-color: #dfe4ea;
+}
+.box{
+    background-color:#454d55 ;
+    color: #ffff;
+    padding: 20px;
+    border-radius: 25px;
+    margin-top: 10px;
+}
+.box a{
+    color: #ffff ;
+}

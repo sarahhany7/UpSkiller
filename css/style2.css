@@ -1,0 +1,323 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+    background-color: #ffffff;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark {
+    background-color: #000000;
+    color: #eee;
+}
+
+:root {
+    --primary-color: #f59e0b; 
+    --secondary-color: #f59e0b;
+    --accent-color: #f59e0b;
+    
+    --light-bg: #ffffff;
+    --dark-bg: #000000; 
+    --light-text: #333;
+    --dark-text: #eee;
+    --card-bg-light: #fff;
+    --card-bg-dark: #333333;
+    
+    --btn-bg: #f59e0b; 
+    --btn-hover: #e0900b;
+    --navbar-bg: #f59e0b; 
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: var(--navbar-bg); 
+    color: white;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.hero-section {
+    padding: 60px 5%;
+    text-align: center;
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--primary-color); 
+    margin-bottom: 20px;
+}
+
+.hero-section .description-container {
+    max-width: 800px;
+    margin: 20px auto 30px auto;
+}
+
+.hero-section ul {
+    list-style: none; 
+    text-align: left; 
+    font-size: 1.15rem; 
+    line-height: 1.8; 
+    color: var(--light-text);
+    padding: 0 20px;
+}
+
+body.dark .hero-section ul {
+    color: var(--dark-text);
+}
+
+.hero-section ul li {
+    margin: 8px 0;
+}
+
+.hero-section ul li::before {
+    content: "• "; 
+    color: var(--primary-color); 
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    background-color: var(--btn-bg); 
+    color: #fff;
+    transition: 0.3s;
+    box-shadow: 0 4px 10px rgba(245, 158, 11, 0.4);
+}
+
+.btn:hover {
+    background-color: var(--btn-hover); 
+    box-shadow: 0 6px 15px rgba(245, 158, 11, 0.6);
+}
+
+.courses-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    margin: 40px 0;
+    padding: 0 5%;
+}
+
+.course-card {
+    background-color: var(--card-bg-light);
+    padding: 30px 15px;
+    border-radius: 12px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transition: background-color 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15); 
+}
+
+body.dark .course-card {
+    background-color: var(--card-bg-dark);
+    color: var(--dark-text);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+.card-icon {
+    width: 60px; 
+    height: 60px;
+    margin: 0 auto 20px auto; 
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+    background-color: var(--primary-color); 
+    border-radius: 50%;
+}
+
+.js-icon::before { content: "JS"; color: white; line-height: 60px; font-weight: bold; display: block; font-size: 20px;}
+.html-icon::before { content: "</>"; color: white; line-height: 60px; font-weight: bold; display: block; font-size: 20px;}
+.css-icon::before { content: "#"; color: white; line-height: 60px; font-weight: bold; display: block; font-size: 20px;}
+
+.course-card h4 {
+    margin-bottom: 20px; 
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--primary-color); 
+}
+
+.course-card select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px; 
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark .course-card select {
+    background-color: #444;
+    color: var(--dark-text);
+    border: 1px solid #666;
+}
+
+.course-card a.btn {
+    display: inline-block;
+    width: 100%;
+    padding: 10px 0;
+    margin-top: 5px; 
+    background-color: var(--btn-bg); 
+    color: #fff;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    box-shadow: none;
+}
+
+.course-card a.btn:hover {
+    background-color: var(--btn-hover); 
+}
+
+
+#themeBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: var(--accent-color); 
+    color: white;
+    font-size: 1.2rem;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.python-logo {
+    background-image: url('images/python.png'); 
+}
+
+.nodejs-logo {
+    background-image: url('images/node-js.png'); 
+}
+
+.java-logo {
+    background-image: url('images/java-script (1).png'); 
+}
+.deep-logo {
+    background-image: url('images/deep-learning.png'); 
+}
+.machine-logo {
+    background-image: url('images/brain.png'); 
+}
+.ux-logo {
+    background-image: url('images/ux-design.png'); 
+}
+.figma-logo {
+    background-image: url('images/logo.png'); 
+}
+.proto-logo {
+    background-image: url('images/3d-modeling.png'); 
+}
+
+.rating {
+    font-size: 24px; 
+    color: #ccc; 
+    cursor: pointer; 
+    user-select: none; 
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+
+.rating span.active,
+.rating:hover span {
+    color: gold; 
+}
+
+
+.rating span:hover ~ span {
+    color: #ccc;
+}
+.small-list-modal {
+    max-width: 400px;
+    text-align: center;
+}
+
+.small-list-modal h2 {
+    color: var(--highlight-color);
+    margin-bottom: 20px;
+}
+
+.track-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.track-list li {
+    margin-bottom: 10px;
+    background-color: var(--secondary-background);
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.track-list li a {
+    display: block;
+    padding: 12px 15px;
+    font-size: 1.1em;
+    color: var(--text-color-primary);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.track-list li:hover {
+    background-color: var(--primary);
+}
+
+.track-list li:hover a {
+    color: #111;
+}
+
+body.dark .track-list li {
+    background-color: #262626;
+}
+
+body.dark .track-list li a {
+    color: var(--text-color-primary);
+}
+
+body.dark .track-list li:hover {
+    background-color: var(--primary);
+}
+
+body.dark .track-list li:hover a {
+    color: #111;
+}
+
+
